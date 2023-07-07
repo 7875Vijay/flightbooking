@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Management System</title>
+  <link rel="stylesheet" href="/assests/viewallbooking.css">
+  <style>
+    .search-bar {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar">
+    <a href="adminpannel_add_flight">Add Flights</a>
+    <a href="remove_flight">Remove Flights</a>
+    <a href="search">Search Flights</a>
+    <a href="viewall" class="active">View All Bookings</a>
+    <a href="/" class="logout">Logout</a>
+  </div>
+  
+  <div class="content-container">
+    <h2>View All Bookings</h2>
+    <table>
+      <tr style="color: #1b1e36;">
+        <th>Flight Number</th>
+        <th>Flight Time</th>
+        <th>Flight Name</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Date</th>
+      </tr>
+      <!-- Add more booking rows here -->
+    </table>
+  </div>
+  <script>
+    var addFlightsLink = document.querySelector('a[href="adminpannel_add_flight.html"]');
+    var removeFlightsLink = document.querySelector('a[href="remove_flight.html"]');
+    var viewAllBookingsLink = document.querySelector('a[href="viewallbooking.html"]');
+
+    addFlightsLink.addEventListener('click', function() {
+      viewAllBookingsLink.classList.remove('active');
+      addFlightsLink.classList.add('active');
+      removeFlightsLink.classList.remove('active');
+      // Code to display add flight section
+    });
+
+    removeFlightsLink.addEventListener('click', function() {
+      viewAllBookingsLink.classList.remove('active');
+      addFlightsLink.classList.remove('active');
+      removeFlightsLink.classList.add('active');
+      // Code to display remove flight section
+    });
+
+    viewAllBookingsLink.addEventListener('click', function() {
+      viewAllBookingsLink.classList.add('active');
+      addFlightsLink.classList.remove('active');
+      removeFlightsLink.classList.remove('active');
+      // Code to display view all bookings section
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search</title>
+  <link rel="stylesheet" href="/assests/flight_search.css">
+</head>
+<body>
+  <div id="navbar">
+    <a style="background-color: #4CAF50;" href="index.html">Home</a>
+    <a href="login.html">Login</a>
+    <a href="mybooking.html">My Booking</a>
+    <a class="logout" href="#logout">Logout</a>
+  </div>
+
+
+  
+  <div class="content">
+    <h1 class="a" >Search Flight Availability</h1>
+  
+    <!-- Search Form -->
+    <form id="search-form" action="search_flight" method="POST">
+      <input name="from" type="text" placeholder="From" required>
+      <input name="to" type="text" placeholder="To" required>
+      <input name="fdate" type="text" placeholder="Flight Date" required>
+      <input name="ftime" type="text" placeholder="Flight Time" required>
+      <input type="submit" value="Seach Flight" required>
+    </form>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

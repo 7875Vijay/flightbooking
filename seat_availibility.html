@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seat Availability</title>
+  <style>
+    body{
+        background-image: url('bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #navbar {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    #navbar a {
+      float: left;
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    #navbar a:hover {
+      background-color: #555;
+    }
+
+    #navbar a.active {
+      background-color: #4CAF50;
+    }
+
+    #seat-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .seat-row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .seat {
+      width: 40px;
+      height: 40px;
+      margin: 5px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .seat.selected {
+      background-color: #4CAF50;
+      color: #fff;
+    }
+    .seat:hover{
+        background-color: #5e5d5d;
+    }
+
+    #next-button {
+      margin-top: 20px;
+      width: 200px;
+      height: 50px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 20px;
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    #next-button:hover{
+        opacity:.8;
+        color: #4CAF50;
+        background-color: rgb(18, 24, 24);
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar">
+    <a style="background-color: #4CAF50;" href="/">Home</a>
+  </div>
+
+  <h1 style="color: #fff;" >Seat Availability</h1>
+
+  <div id="seat-container">
+    <h2>Business Class</h2>
+    <div class="seat-row">
+      <!-- Business class seat blocks -->
+      <!-- Example: display 5 seats in a row -->
+      <div class="seat">1</div>
+      <div class="seat">2</div>
+      <div class="seat">3</div>
+      <div class="seat">4</div>
+      <div class="seat">5</div>
+      <div class="seat">6</div>
+      <div class="seat">7</div>
+      <div class="seat">8</div>
+      <div class="seat">9</div>
+      <div class="seat">10</div>
+      <div class="seat">11</div>
+      <div class="seat">12</div>
+    </div>
+
+    <h2>Economy Class</h2>
+    <div class="seat-row">
+      <!-- Economy class seat blocks -->
+      <!-- Example: display 10 seats in a row -->
+      
+      <div class="seat">13</div>
+      <div class="seat">14</div>
+      <div class="seat">15</div>
+      <div class="seat">16</div>
+      <div class="seat">17</div>
+      <div class="seat">18</div>
+      <div class="seat">19</div>
+      <div class="seat">20</div>
+      <div class="seat">21</div>
+      <div class="seat">22</div>
+      <div class="seat">23</div>
+      <div class="seat">24</div>
+      <div class="seat">25</div>
+      <div class="seat">26</div>
+      <div class="seat">27</div>
+      <div class="seat">28</div>
+      <div class="seat">29</div>
+      <div class="seat">30</div>
+      <div class="seat">31</div>
+      <div class="seat">32</div>
+      <div class="seat">33</div>
+      <div class="seat">34</div>
+      <div class="seat">35</div>
+      <div class="seat">36</div>
+      <div class="seat">37</div>
+      <div class="seat">38</div>
+      <div class="seat">39</div>
+      <div class="seat">40</div>
+      <div class="seat">41</div>
+      <div class="seat">42</div>
+      <div class="seat">43</div>
+      <div class="seat">44</div>
+      <div class="seat">45</div>
+      <div class="seat">46</div>
+      <div class="seat">47</div>
+      <div class="seat">48</div>
+      <div class="seat">49</div>
+      <div class="seat">50</div>
+      <div class="seat">51</div>
+      <div class="seat">52</div>
+      <div class="seat">53</div>
+      <div class="seat">54</div>
+      <div class="seat">55</div>
+      <div class="seat">56</div>
+      <div class="seat">57</div>
+      <div class="seat">58</div>
+      <div class="seat">59</div>
+      <div class="seat">60</div>
+    </div>
+  </div>
+
+  <button id="next-button">Next</button>
+
+  <script>
+    // Seat selection functionality
+    var seats = document.getElementsByClassName('seat');
+    var selectedSeat = null;
+    var nextButton = document.getElementById('next-button');
+
+    for (var i = 0; i < seats.length; i++) {
+      seats[i].addEventListener('click', function() {
+        if (selectedSeat) {
+          selectedSeat.classList.remove('selected');
+        }
+        this.classList.add('selected');
+        selectedSeat = this;
+        nextButton.style.display = 'block';
+      });
+    }
+
+    // Next button functionality
+    nextButton.addEventListener('click', function() {
+      // Implement your logic here when the next button is clicked
+      // For example, navigate to the payment page or perform further actions
+        if (selectedSeat) {
+            // Perform any necessary actions before navigating to the payment page
+            // Redirect to the payment page
+            window.location.href = 'payment';
+        }
+        else{
+            alert("Please select the seat First!")
+        }
+      console.log('Next button clicked!');
+    });
+  </script>
+</body>
+</html>

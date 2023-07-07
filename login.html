@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Login Page</title>
+  <link rel="stylesheet" href="/assests/styles.css">
+</head>
+<body>
+  <div id="navbar">
+    <a href="index.html">Home</a>
+    <a class="active" href="login.html">Login</a>
+  </div>
+  
+  <div class="login-container">
+    <h2>User Login</h2>
+    <form onsubmit="return validateForm()" action="/login" method="POST">
+      <input name="username" type="text" placeholder="Username" area-required="true">
+      <input name="password" type="password" placeholder="Password" area-required="true">
+      <input type="submit" value="Login">
+    </form>
+    <div class="signup-link">
+      Don't have an account? <a href="signup">Sign up</a>
+    </div>
+  </div>
+
+  <script>
+    function validateForm() {
+      var username = document.querySelector('input[type="text"]').value;
+      var password = document.querySelector('input[type="password"]').value;
+
+      if (!username || !password) {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+
+      // Additional validation logic can be added here
+
+      return true;
+    }
+  </script>
+</body>
+</html>

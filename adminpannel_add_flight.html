@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Management System</title>
+  <link rel="stylesheet" href="/assests/adminpannel.css">
+</head>
+<body>
+  <div id="navbar">
+    <a href="adminpannel_add_flight" class="active">Add Flights</a>
+    <a href="remove_flight">Remove Flights</a>
+    <a href="viewall">View All Bookings</a>
+    <a href="search">Search Flights</a>
+    <a href="/" class="logout">Logout</a>
+  </div>
+  
+  <div class="signup-container">
+    <h2>Add Flights</h2>
+    <form action="/add" method="POST">
+      <input name="fnumber" type="text" placeholder="Flight Number" required>
+      <input name="ftime" type="text" placeholder="Flight Time" required>
+      <input name="from" type="text" placeholder="From" required>
+      <input name="to" type="text" placeholder="To" required>
+      <input name="fdate" type="text" placeholder="Flight Date" required>
+      <input type="submit" value="Add Flight" required>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    alert("Seat selected, do you want to proceed?")
+  </script>
+  <title>Payment Form</title>
+  <style>
+    body {
+      background-color: #f1f1f1;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 3px;
+      border: none;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Payment Form</h2>
+    <form>
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter card number" required>
+      </div>
+      <div class="form-group">
+        <label for="expiryDate">Expiry Date</label>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YYYY" required>
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+      </div>
+      <div class="form-group">
+        <label for="cardholderName">Cardholder Name</label>
+        <input type="text" id="cardholderName" name="cardholderName" placeholder="Enter cardholder name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter email" required>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+      </div>
+      <input id="payed" type="submit" value="Pay Now">
+    </form>
+  </div>
+  <script>
+    var paybutn = document.getElementById('payed');
+    paybutn.style.display = 'block';
+
+    paybutn.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent form submission
+      
+      // Implement your payment processing logic here
+      // For demonstration purposes, we'll simply simulate a successful payment after a short delay
+      setTimeout(function() {
+        // Redirect to the ticket details page
+        window.location.href = 'tecket';
+      }, 2000); // Redirect after 2 seconds (adjust as needed)
+    });
+  </script>
+</body>
+
+</html>

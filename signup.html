@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Sign Up Page</title>
+  <link rel="stylesheet" href="/assests/signup.css">
+</head>
+<body>
+  <div id="navbar">
+    <a href="index.html">Home</a>
+    <a href="user.html">Login</a>
+    <a class="active" href="#signup">Sign Up</a>
+  </div>
+  
+  <div class="signup-container">
+    <h2>User Sign Up</h2>
+    <form id="signup-form" action="/signup"method="POST">
+      <input name="username" type="text" id="username" placeholder="Username" area-required="true">
+      <input name="password" type="password" id="password" placeholder="Password" area-required="true">
+      <input name="confirm" type="password" id="confirm-password" placeholder="Confirm Password" area-required="true">
+      <input  name="email" type="email" id="email" placeholder="Email" required>
+      <input type="submit" value="Sign Up">
+    </form>
+    <div class="login-link">
+      Already have an account? <a style="color: #59c95f;"  href="login">Login</a>
+    </div>
+  </div>
+  
+  <script src="signup.js"></script>
+</body>
+</html>
